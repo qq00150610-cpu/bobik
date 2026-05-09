@@ -2,6 +2,8 @@ package com.example.bobik.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.bobik.data.models.*
+import com.example.bobik.data.db.MemoryEntity
+import com.example.bobik.data.db.ConversationEntity
 import com.example.bobik.engine.AgentEngine
 import com.example.bobik.engine.EventBus
 import com.example.bobik.engine.QuotaTracker
@@ -116,13 +118,13 @@ class MainViewModel : ViewModel() {
         } else {
             AgentEngine.searchMemories(search)
         }
-        _memories.value = result.map { m ->
+        _memories.value = result.map { m: MemoryEntity ->
             MemoryItem(m.id, m.title, m.content, m.category, m.confidence, m.createdAt)
         }
     }
 
-    private fun loadRecentConversations(): List<ChatMessage> {
-        return AgentEngine.getRecentConversations(30).map { c ->
+    fun loadRecentConversations(): List<ChatMessage> {
+        return AgentEngine.getRecentConversations(30).map { c: ConversationEntity ->
             ChatMessage(fromId = c.fromId, role = c.role, content = c.content, timestamp = c.createdAt.toLongOrNull() ?: 0)
         }.reversed()
     }
