@@ -1,5 +1,8 @@
 package com.example.bobik.ui.theme
 
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val DarkBackground = Color(0xFF0D0D1A)
@@ -11,10 +14,6 @@ val SoftLavender = Color(0xFFB388FF)
 val WarmAmber = Color(0xFFFFAB40)
 val SuccessGreen = Color(0xFF00E676)
 val ErrorRed = Color(0xFFFF5252)
-
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.runtime.Composable
 
 private val BobikColorScheme = darkColorScheme(
     primary = ElectricViolet,
