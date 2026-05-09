@@ -2,8 +2,6 @@ package com.example.bobik.data.db
 
 import android.content.Context
 import androidx.room.*
-import androidx.room.Database
-import androidx.room.RoomDatabase
 
 @Entity(tableName = "memories")
 data class MemoryEntity(
@@ -34,10 +32,10 @@ data class ConfigEntity(
 @Dao
 interface MemoryDao {
     @Query("SELECT * FROM memories ORDER BY id DESC LIMIT :limit")
-    fun getAll(limit: Int = 100): List<AgentEngine.MemoryEntry>
+    fun getAll(limit: Int = 100): List<MemoryEntity>
 
     @Query("SELECT * FROM memories WHERE title LIKE '%' || :query || '%' OR content LIKE '%' || :query || '%' ORDER BY id DESC LIMIT :limit")
-    fun search(query: String, limit: Int = 10): List<AgentEngine.MemoryEntry>
+    fun search(query: String, limit: Int = 10): List<MemoryEntity>
 
     @Query("SELECT COUNT(*) FROM memories")
     fun getCount(): Int
@@ -49,7 +47,7 @@ interface MemoryDao {
 @Dao
 interface ConversationDao {
     @Query("SELECT * FROM conversations ORDER BY id DESC LIMIT :limit")
-    fun getRecent(limit: Int = 30): List<AgentEngine.ConversationEntry>
+    fun getRecent(limit: Int = 30): List<ConversationEntity>
 
     @Query("SELECT COUNT(*) FROM conversations")
     fun getCount(): Int
