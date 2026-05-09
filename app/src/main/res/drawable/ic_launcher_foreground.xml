@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 大脑形状 -->
+    <path
+        android:fillColor="#7B2FFF"
+        android:pathData="M54,24C44.059,24,36,32.059,36,42c0,3.5,0.8,6.8,2.2,9.8C32,53.5,27,59.5,27,66.5
+        C27,76.1,34.9,84,44.5,84h19c9.6,0,17.5-7.9,17.5-17.5c0-7-5-13-11.2-14.7
+        C71.2,48.8,72,45.5,72,42C72,32.059,63.941,24,54,24z"/>
+    <!-- 闪电（AI） -->
+    <path
+        android:fillColor="#00F5FF"
+        android:pathData="M50,44l8,-14h-6l-4,12h-4l6,-14h-6L38,48h6l-2,8h6l2,-12H50z"/>
+</vector>
